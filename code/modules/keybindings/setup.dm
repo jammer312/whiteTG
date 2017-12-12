@@ -35,6 +35,9 @@ GLOBAL_LIST_INIT(default_macros, list(
 	"O" = "ooc",
 	"T" = "say",
 	"M" = "me",
+	"F2" = "ooc",
+	"F3" = "say",
+	"F4" = "me",
 	"Back" = "\".winset \\\"input.text=\\\"\\\"\\\"\"", // This makes it so backspace can remove default inputs
 	"Any" = "\"KeyDown \[\[*\]\]\"",
 	"Any+UP" = "\"KeyUp \[\[*\]\]\"",
