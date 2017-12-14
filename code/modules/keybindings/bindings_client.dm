@@ -15,8 +15,8 @@
 	// Things like taking screenshots, hitting tab, and adminhelps.
 
 	switch(_key)
-		if("F1")
-			adminhelp()
+		if("O")
+			ooc(verbtextinput("OOC"))
 		if("F12") // Toggles minimal HUD
 			mob.button_pressed_F12()
 

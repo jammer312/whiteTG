@@ -72,3 +72,6 @@ GLOBAL_LIST_INIT(russian_keyrebind, list(
 		return
 	if(GLOB.russian_keyrebind[key])
 		return GLOB.russian_keyrebind[key]
+
+/proc/verbtextinput(var/title as text)
+	return input("",title) as text|null
