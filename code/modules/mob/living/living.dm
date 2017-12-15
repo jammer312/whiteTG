@@ -942,11 +942,6 @@
 						"[C] leaps out of [src]'s way!")]</span>")
 	C.Knockdown(40)
 
-/mob/living/post_buckle_mob(mob/living/M)
-	if(riding_datum)
-		riding_datum.handle_vehicle_offsets()
-		riding_datum.handle_vehicle_layer()
-
 /mob/living/ConveyorMove()
 	if((movement_type & FLYING) && !stat)
 		return
