@@ -223,7 +223,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 			continue
 
 		//Send it to the old style output window.
-		SEND_TEXT(C, original_message)
+		SEND_TEXT(C, russian_html2text(original_message))
 
 		if(!C.chatOutput || C.chatOutput.broken) // A player who hasn't updated his skin file.
 			continue
