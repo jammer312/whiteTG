@@ -902,10 +902,6 @@
 "acu" = (
 /turf/open/floor/carpet,
 /area/crew_quarters/heads/hos)
-"acv" = (
-/obj/structure/closet/secure_closet/contraband/armory,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "acw" = (
 /obj/structure/sign/warning/securearea{
 	pixel_y = -32
@@ -8504,13 +8500,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/crew_quarters/fitness)
-"avB" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/turf/open/floor/plating,
-/area/ai_monitored/security/armory)
 "avC" = (
 /obj/structure/chair{
 	dir = 8
@@ -20219,7 +20208,7 @@
 /obj/machinery/newscaster{
 	pixel_y = -28
 	},
-/obj/machinery/party/turntable,
+/obj/machinery/jukebox,
 /turf/open/floor/plasteel/bar,
 /area/crew_quarters/bar)
 "bad" = (
@@ -22352,12 +22341,6 @@
 /obj/item/pinpointer/nuke,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
-"bfD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "bfE" = (
 /obj/item/storage/secure/safe{
 	pixel_x = 35;
@@ -22810,13 +22793,6 @@
 	icon_state = "computer";
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
-"bgT" = (
-/obj/machinery/computer/communications{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
 "bgU" = (
@@ -23379,13 +23355,6 @@
 	icon_state = "computer";
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
-"bil" = (
-/obj/machinery/computer/card{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
 "bim" = (
@@ -23961,12 +23930,6 @@
 /obj/machinery/suit_storage_unit/captain,
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
-"bjI" = (
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/floor/wood,
-/area/crew_quarters/heads/captain)
 "bjJ" = (
 /obj/structure/filingcabinet,
 /turf/open/floor/wood,
@@ -24536,17 +24499,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/crew_quarters/heads/captain)
-"bld" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Captain's Office Maintenance";
-	req_access_txt = "20"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plating,
-/area/maintenance/central/secondary)
 "ble" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/extinguisher_cabinet{
@@ -25198,12 +25150,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/crew_quarters/heads/captain)
-"bmD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/central/secondary)
 "bmE" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
@@ -26948,22 +26894,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/teleporter)
-"bqK" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Teleporter Maintenance";
-	req_access_txt = "17"
-	},
-/obj/structure/sign/warning/securearea{
-	pixel_x = -32
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/maintenance/central/secondary)
 "bqL" = (
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment,
@@ -28301,15 +28231,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
-/area/teleporter)
-"btN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
 	},
 /turf/open/floor/plasteel,
 /area/teleporter)
@@ -35036,12 +34957,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"bJu" = (
-/obj/structure/light_construct{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/construction)
 "bJv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -35090,20 +35005,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"bJz" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/extinguisher_cabinet{
-	pixel_x = -27;
-	pixel_y = 1
-	},
-/obj/machinery/light{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/plasteel/caution/corner{
-	dir = 8
-	},
-/area/hallway/primary/aft)
 "bJA" = (
 /obj/effect/landmark/blobstart,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -38800,12 +38701,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/aft)
-"bSx" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/construction)
 "bSy" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/grimy,
@@ -53627,21 +53522,6 @@
 	dir = 1
 	},
 /area/engine/engineering)
-"cTD" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/power/apc{
-	dir = 8;
-	name = "Central Maintenance APC";
-	areastring = "/area/maintenance/central/secondary";
-	pixel_x = -24
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plating,
-/area/maintenance/central/secondary)
 "cTE" = (
 /obj/machinery/computer/shuttle/mining{
 	dir = 8
@@ -54600,42 +54480,6 @@
 	dir = 8
 	},
 /area/hallway/primary/central)
-"ycz" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/blue/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
-"ycA" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/blue/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
-"ycB" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/blue/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
-"ycC" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/blue/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
 "ycD" = (
 /obj/machinery/firealarm{
 	dir = 1;
@@ -54643,15 +54487,6 @@
 	},
 /turf/open/floor/wood,
 /area/crew_quarters/heads/captain)
-"ycE" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/blue/corner{
-	dir = 8
-	},
-/area/hallway/primary/central)
 "ycF" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -54663,24 +54498,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/crew_quarters/heads/captain)
-"ycH" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/central)
-"ycI" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/crew_quarters/heads/captain)
-"ycJ" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel,
-/area/hallway/primary/central)
 "ycK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/light{
@@ -54694,22 +54511,6 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plasteel,
 /area/quartermaster/storage)
-"ycM" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/quartermaster/storage)
-"ycN" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/crew_quarters/heads/captain)
-"ycO" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plasteel,
-/area/quartermaster/storage)
 "ycP" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -54717,10 +54518,6 @@
 "ycQ" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel/floorgrime,
-/area/construction)
-"ycR" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
 /area/construction)
 "ycS" = (
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
@@ -74405,7 +74202,7 @@ bjr
 bmh
 boK
 bjr
-ycO
+ycL
 bjr
 bjr
 bvV
@@ -74660,7 +74457,7 @@ bjp
 bjr
 bjr
 bmh
-ycM
+ycL
 bjr
 cBp
 bjr
@@ -83161,7 +82958,7 @@ bLD
 bCs
 bCs
 ycP
-ycR
+ycP
 bKU
 cnB
 bNI
@@ -87252,8 +87049,8 @@ aZV
 aZV
 aZV
 ycG
-ycI
-ycN
+ycG
+ycG
 bqH
 bqH
 btM
@@ -87500,16 +87297,16 @@ aXh
 aYG
 aZY
 ycy
-ycz
+ycy
 bdn
 bep
-ycA
-ycB
-ycC
-ycE
+ycy
+ycy
+ycy
+ycy
 ble
-ycH
-ycJ
+bpn
+bpn
 bpn
 bqL
 bsp
