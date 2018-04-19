@@ -132,6 +132,7 @@
 /proc/log_world(text)
 	WRITE_LOG(GLOB.world_runtime_log, text)
 	SEND_TEXT(world.log, text)
+	webhook_send_runtime(text) //actually it's not runtime but screw it
 
 /* Log to the logfile only. */
 /proc/log_runtime(text)
