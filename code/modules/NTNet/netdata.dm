@@ -18,7 +18,7 @@
 
 	// Encrypt the passkey.
 	if(!encrypted_passkey && passkey)
-		encrypted_passkey = strtohex(XorEncrypt(json_encode(passkey), SScircuit.cipherkey))
+		encrypted_passkey = strtohex(XorEncrypt(r_json_encode(passkey), SScircuit.cipherkey))
 
 	// If there is no sender ID, set the default one.
 	if(!sender_id && interface)
@@ -43,4 +43,4 @@
 	.["passkey"] = encrypted_passkey
 
 /datum/netdata/proc/generate_netlog()
-	return "[json_encode(json_list_generation_netlog())]"
+	return "[r_json_encode(json_list_generation_netlog())]"

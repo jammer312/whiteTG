@@ -121,7 +121,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 /datum/chatOutput/proc/ehjax_send(client/C = owner, window = "browseroutput", data)
 	if(islist(data))
-		data = json_encode(data)
+		data = r_json_encode(data)
 	C << output("[data]", "[window]:ehjaxCallback")
 
 /datum/chatOutput/proc/sendMusic(music, pitch)
@@ -146,7 +146,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	deets["clientData"]["ckey"] = owner.ckey
 	deets["clientData"]["ip"] = owner.address
 	deets["clientData"]["compid"] = owner.computer_id
-	var/data = json_encode(deets)
+	var/data = r_json_encode(deets)
 	ehjax_send(data = data)
 
 //Called by client, sent data to investigate (cookie history so far)
