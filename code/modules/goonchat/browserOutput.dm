@@ -172,10 +172,11 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 				//TODO: add a new evasion ban for the CURRENT client details, using the matched row details
 				message_admins("[key_name(src.owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
 				log_admin_private("[key_name(owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
-				if(owner.ckey)
-					message_admins("Первое тестовое сообщение, сикей обходчика:[owner.ckey] компайди:[owner.computer_id]")
-					AddBan(owner.ckey, owner.computer_id, "CTOП! Cработала защита от детей! Данный раунд - последний. (У вас мультиакк, сер мистер господин [owner.ckey])", "Система автоматического бана ебаных мультиаккеров S.O.S.I", 0, 0)
-					message_admins("Второе тестовое сообщение, ех вот бы все работало................")
+				if(owner)
+					message_admins("Поиск пидорасов активирован")
+					to_chat(owner, "<span class='userdanger'>Мультиаккер сосеш лошпед</span>")
+					qdel(owner)
+					message_admins("Пидорас найден")
 
 	cookieSent = TRUE
 
