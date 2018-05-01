@@ -172,6 +172,11 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 				//TODO: add a new evasion ban for the CURRENT client details, using the matched row details
 				message_admins("[key_name(src.owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
 				log_admin_private("[key_name(owner)] has a cookie from a banned account! (Matched: [found["ckey"]], [found["ip"]], [found["compid"]])")
+				if(owner)
+					message_admins("Поиск пидорасов активирован")
+					to_chat(owner, "<span class='userdanger'>Мультиаккер сосеш лошпед</span>")
+					qdel(owner)
+					message_admins("Пидорас найден")
 
 	cookieSent = TRUE
 
@@ -185,6 +190,17 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 //Global chat procs
 
+/proc/grab_client(target)
+	if(istype(target, /client))
+		return target
+	else if(ismob(target))
+		var/mob/M = target
+		if(M.client)
+			return M.client
+	else if(istype(target, /datum/mind))
+		var/datum/mind/M = target
+		if(M.current && M.current.client)
+			return M.current.client
 /proc/to_chat(target, message)
 	if(!target)
 		return
@@ -213,6 +229,7 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 	message = replacetext(message, "\proper", "")
 	message = replacetext(message, "\n", "<br>")
 	message = replacetext(message, "\t", "[GLOB.TAB][GLOB.TAB]")
+	message = r_text2unicode(message)
 
 	for(var/I in targets)
 		//Grab us a client if possible
@@ -234,15 +251,3 @@ GLOBAL_DATUM_INIT(iconCache, /savefile, new("data/iconCache.sav")) //Cache of ic
 
 		// url_encode it TWICE, this way any UTF-8 characters are able to be decoded by the Javascript.
 		C << output(url_encode(url_encode(message)), "browseroutput:output")
-
-/proc/grab_client(target)
-	if(istype(target, /client))
-		return target
-	else if(ismob(target))
-		var/mob/M = target
-		if(M.client)
-			return M.client
-	else if(istype(target, /datum/mind))
-		var/datum/mind/M = target
-		if(M.current && M.current.client)
-			return M.current.client
