@@ -313,10 +313,3 @@ obj/item/banner/engineering/atmos/mundane
 				return
 			var/blyad = pick('code/white/fogmann/blyead.ogg')
 			playsound(user, blyad, 25, 1, -1)
-
-/datum/species/fly/check_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/storage/book/ruchinese))
-		return 50
- /datum/species/moth/check_weakness(obj/item/weapon, mob/living/attacker)
-	if(istype(weapon, /obj/item/storage/book/ruchinese))
-		return 20

@@ -84,9 +84,9 @@ SUBSYSTEM_DEF(vote)
 	var/text
 	if(winners.len > 0)
 		if(question)
-			text += "<b>[question]</b>"
+			text += "<b>[rhtml_decode(question)]</b>"
 		else
-			text += "<b>[capitalize(mode)] Vote</b>"
+			text += "<b>[rhtml_decode(question)] Vote</b>"
 		for(var/i=1,i<=choices.len,i++)
 			var/votes = choices[choices[i]]
 			if(!votes)
