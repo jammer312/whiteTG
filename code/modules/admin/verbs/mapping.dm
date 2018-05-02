@@ -107,9 +107,9 @@ GLOBAL_LIST_INIT(admin_verbs_debug_mapping, list(
 				if(C1.c_tag == C2.c_tag)
 					output += "<li><font color='red'>c_tag match for cameras at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) and [ADMIN_COORDJMP(C2)] ([C2.loc.loc]) - c_tag is [C1.c_tag]</font></li>"
 				if(C1.loc == C2.loc && C1.dir == C2.dir && C1.pixel_x == C2.pixel_x && C1.pixel_y == C2.pixel_y)
-					output += "<li><font color='red'>FULLY overlapping cameras at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Networks: [json_encode(C1.network)] and [json_encode(C2.network)]</font></li>"
+					output += "<li><font color='red'>FULLY overlapping cameras at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Networks: [r_json_encode(C1.network)] and [r_json_encode(C2.network)]</font></li>"
 				if(C1.loc == C2.loc)
-					output += "<li>Overlapping cameras at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Networks: [json_encode(C1.network)] and [json_encode(C2.network)]</li>"
+					output += "<li>Overlapping cameras at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Networks: [r_json_encode(C1.network)] and [r_json_encode(C2.network)]</li>"
 		var/turf/T = get_step(C1,turn(C1.dir,180))
 		if(!T || !isturf(T) || !T.density )
 			if(!(locate(/obj/structure/grille) in T))
@@ -119,7 +119,7 @@ GLOBAL_LIST_INIT(admin_verbs_debug_mapping, list(
 						window_check = 1
 						break
 				if(!window_check)
-					output += "<li><font color='red'>Camera not connected to wall at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Network: [json_encode(C1.network)]</font></li>"
+					output += "<li><font color='red'>Camera not connected to wall at [ADMIN_COORDJMP(C1)] ([C1.loc.loc]) Network: [r_json_encode(C1.network)]</font></li>"
 
 	output += "</ul>"
 	usr << browse(output,"window=airreport;size=1000x500")
@@ -334,7 +334,7 @@ GLOBAL_VAR_INIT(say_disabled, FALSE)
 			else
 				linkage = "unknown linkage '[S.linkage]'"
 
-		messages += "<b>[z]</b>: [S.name], [linkage], traits: [json_encode(S.traits)]<br>"
+		messages += "<b>[z]</b>: [S.name], [linkage], traits: [r_json_encode(S.traits)]<br>"
 		if (S.z_value != z)
 			messages += "-- z_value is [S.z_value], should be [z]<br>"
 		if (S.name == initial(S.name))

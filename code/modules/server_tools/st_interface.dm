@@ -100,7 +100,7 @@ SERVER_TOOLS_DEFINE_AND_SET_GLOBAL(server_tools_api_compatible, FALSE)
 		if(SERVICE_CMD_PLAYER_COUNT)
 			return "[SERVER_TOOLS_CLIENT_COUNT]"
 		if(SERVICE_CMD_LIST_CUSTOM)
-			return json_encode(ListServiceCustomCommands(FALSE))
+			return r_json_encode(ListServiceCustomCommands(FALSE))
 		else
 			var/custom_command_result = HandleServiceCustomCommand(lowertext(command), params[SERVICE_CMD_PARAM_SENDER], params[SERVICE_CMD_PARAM_CUSTOM])
 			if(custom_command_result)
