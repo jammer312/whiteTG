@@ -58,4 +58,4 @@
 	.["data_list"] = data
 
 /datum/netdata/proc/generate_netlog()
-	return "[json_encode(json_list_generation_netlog())]"
+	return "[r_json_encode(json_list_generation_netlog())]"
