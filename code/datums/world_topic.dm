@@ -137,6 +137,10 @@
 /datum/world_topic/status
     keyword = "status"
 
+/datum/world_topic/adminwho
+	keyword = "adminwho"
+	require_comms_key = TRUE
+
 /datum/world_topic/status/Run(list/input)
 	. = list()
 	.["version"] = GLOB.game_version
