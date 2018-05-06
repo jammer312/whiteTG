@@ -105,7 +105,7 @@ JSON на выходе - строго ASCII, строки закодированы в Unicode, все Unicode-символ
 		s += 1
 	else if (copytext(t,1,2) == ":")
 		s += 2
-	s = findtext(t, "\w", s) + 1 //find first WORD character (letter char) excluding prefix, +1 because fuck byond
+	s = findtext(t, "\\w", s) + 1 //find first WORD character (letter char) excluding prefix, +1 because fuck byond, \\w instead of \w because fuck byond
 	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
 
 /proc/r_uppertext(text)
