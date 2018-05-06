@@ -293,8 +293,13 @@
 		type = 2
 	if(I)
 		if(type == 1)
-			changeNext_move(CLICK_CD_BREAKOUT)
-			last_special = world.time + CLICK_CD_BREAKOUT
+			var/obj/item/weapon/restraints/handcuffs/H = I
+			if(istype(H)&&H.tricked)
+				changeNext_move(CLICK_CD_BREAKOUT_TRICKY)
+				last_special = world.time + CLICK_CD_BREAKOUT_TRICKY
+			else
+				changeNext_move(CLICK_CD_BREAKOUT)
+				last_special = world.time + CLICK_CD_BREAKOUT
 		if(type == 2)
 			changeNext_move(CLICK_CD_RANGE)
 			last_special = world.time + CLICK_CD_RANGE
@@ -307,7 +312,23 @@
 		return
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
-	if(!cuff_break)
+
+	var/obj/item/weapon/restraints/handcuffs/H = I
+	if(istype(H)&&H.tricked)
+		visible_message(
+						"<span class='warning'>[src] fiddles with [I]!</span>",\
+						"<span class='notice'>You attempt to quickly remove [I]...</span>")
+		if(do_after(src, 10, 0, target=src))
+			clear_cuffs(I,FALSE,TRUE)
+		else
+			if(H.loc == src)
+				var/epic_fail = prob(70)
+				visible_message(
+								"<span class='danger'>[src] tries to remove [I], but gets interrupted and fails[epic_fail?" horribly":""]!</span>",\
+								"<span class='notice'>You were interrupted and failed at removing [I].</span>[epic_fail?"<span class='danger'>And it seems you accidentally locked [I].</span>":""]")
+				if(epic_fail)
+					H.tricked = FALSE
+	else if(!cuff_break)
 		visible_message("<span class='warning'>[src] attempts to remove [I]!</span>")
 		to_chat(src, "<span class='notice'>You attempt to remove [I]... (This will take around [DisplayTimeText(breakouttime)] and you need to stand still.)</span>")
 		if(do_after(src, breakouttime, 0, target = src))
@@ -358,11 +379,18 @@
 				W.plane = initial(W.plane)
 		changeNext_move(0)
 
-/mob/living/carbon/proc/clear_cuffs(obj/item/I, cuff_break)
+/mob/living/carbon/proc/clear_cuffs(obj/item/I, cuff_break, tricky)
 	if(!I.loc || buckled)
 		return
-	visible_message("<span class='danger'>[src] manages to [cuff_break ? "break" : "remove"] [I]!</span>")
-	to_chat(src, "<span class='notice'>You successfully [cuff_break ? "break" : "remove"] [I].</span>")
+	if(tricky)
+		visible_message("<span class='danger'>Woah! In a stunning display of agility [src] manages to remove [I]!</span>")
+		to_chat(src,"<span class='notice'>You successfully remove [I].</span>")
+		for(var/mob/living/carbon/C in viewers(src,2))
+			if(C != src)
+				C.Stun(1) //literally stunning
+	else
+		visible_message("<span class='danger'>[src] manages to [cuff_break ? "break" : "remove"] [I]!</span>")
+		to_chat(src, "<span class='notice'>You successfully [cuff_break ? "break" : "remove"] [I].</span>")
 
 	if(cuff_break)
 		. = !((I == handcuffed) || (I == legcuffed))
