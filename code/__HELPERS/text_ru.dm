@@ -100,14 +100,12 @@ JSON на выходе - строго ASCII, строки закодированы в Unicode, все Unicode-символ
 		. += copytext(t,x,x+1)
 
 /proc/ruscapitalize(t)
-	var/s = 2
-	if (copytext(t,1,2) == ";")
+	var/s = 1
+	if (copytext(t,1,2) == ";" || copytext(t,1,2) == "#")
 		s += 1
 	else if (copytext(t,1,2) == ":")
-		if(copytext(t,3,4) == " ")
-			s+=3
-		else
-			s+=2
+		s += 2
+	s = findtext(t, "\w", s) + 1 //find first WORD character (letter char) excluding prefix, +1 because fuck byond
 	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
 
 /proc/r_uppertext(text)
