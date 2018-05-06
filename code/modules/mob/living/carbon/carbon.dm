@@ -293,7 +293,7 @@
 		type = 2
 	if(I)
 		if(type == 1)
-			var/obj/item/weapon/restraints/handcuffs/H = I
+			var/obj/item/restraints/handcuffs/H = I
 			if(istype(H)&&H.tricked)
 				changeNext_move(CLICK_CD_BREAKOUT_TRICKY)
 				last_special = world.time + CLICK_CD_BREAKOUT_TRICKY
@@ -313,7 +313,7 @@
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
 
-	var/obj/item/weapon/restraints/handcuffs/H = I
+	var/obj/item/restraints/handcuffs/H = I
 	if(istype(H)&&H.tricked)
 		visible_message(
 						"<span class='warning'>[src] fiddles with [I]!</span>",\

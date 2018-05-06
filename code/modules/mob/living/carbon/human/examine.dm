@@ -59,9 +59,9 @@
 
 	//handcuffed?
 	if(handcuffed)
-		var/iscable = istype(handcuffed, /obj/item/weapon/restraints/handcuffs/cable)
+		var/iscable = istype(handcuffed, /obj/item/restraints/handcuffs/cable)
 		msg += "* <span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] [iscable?"restrained with cable":"handcuffed"]!</span>\n"
-		if(istype(handcuffed, /obj/item/weapon/restraints/handcuffs) && handcuffed:tricked && (prob(CLAMP(3-get_dist(src,user),0,3)*20)||src==user))
+		if(istype(handcuffed, /obj/item/restraints/handcuffs) && handcuffed:tricked && (prob(CLAMP(3-get_dist(src,user),0,3)*20)||src==user))
 			msg += "  <span class='warning'>You spot something unusual in a way [p_they(FALSE)] [t_is] [iscable?"restrained":"handcuffed"]...</span>\n"
 	//belt
 	if(belt)

@@ -78,7 +78,7 @@
 		else
 			to_chat(user, "<span class='warning'>[C] doesn't have two hands...</span>")
 
-/obj/item/weapon/restraints/handcuffs/attack_self(mob/living/carbon/human/user)
+/obj/item/restraints/handcuffs/attack_self(mob/living/carbon/human/user)
 	if(!istype(user))
 		return
 	if(!user.handcuffed)
