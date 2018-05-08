@@ -6,6 +6,7 @@
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 	if(message)
+		message = ruscapitalize(message)
 		say(message)
 
 
