@@ -100,14 +100,12 @@ JSON на выходе - строго ASCII, строки закодированы в Unicode, все Unicode-символ
 		. += copytext(t,x,x+1)
 
 /proc/ruscapitalize(t)
-	var/static/rw="\[абвгдеёжзийклмнопрстуфхцчшщьыъэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ\]"
 	var/s = 1
 	if (copytext(t,1,2) == ";" || copytext(t,1,2) == "#")
 		s += 1
 	else if (copytext(t,1,2) == ":")
 		s += 2
-	s = findtext(t, "[rw]", s) + 1 //find first WORD character (letter char) excluding prefix, +1 because fuck byond, \\w instead of \w because fuck byond, rw instead of \w because fuck byond
-	to_chat(world,s)
+	s = findtext(t, regex("\[^ \]","g"), s) + 1 //find first WORD character (letter char) excluding prefix, +1 because fuck byond, \\w instead of \w because fuck byond, rw instead of \w because fuck byond, fuck this shit I'm out
 	return r_uppertext(copytext(t, 1, s)) + copytext(t, s)
 
 /proc/r_uppertext(text)
