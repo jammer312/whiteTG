@@ -134,8 +134,18 @@
 		to_chat(X, "<font color='blue'><B>PM: DISCORD([s_admin]) -&gt; [key_name(recipient, X, 0)]</B> [keywordparsedmsg]</font>")
 	webhook_send_ahelp("[sanitize_russian(input["admin"])] -> [ckey(input["ckey"])]", sanitize_russian(input["response"]))
 
+<<<<<<< HEAD
 /datum/world_topic/status
     keyword = "status"
+=======
+/datum/world_topic/namecheck/Run(list/input)
+	//Oh this is a hack, someone refactor the functionality out of the chat command PLS
+	var/datum/tgs_chat_command/namecheck/NC = new
+	var/datum/tgs_chat_user/user = new
+	user.friendly_name = input["sender"]
+	user.mention = user.friendly_name
+	return NC.Run(user, input["namecheck"])
+>>>>>>> 9173de44274185e62bea8313895fd9a69d702e20
 
 /datum/world_topic/adminwho
 	keyword = "adminwho"
