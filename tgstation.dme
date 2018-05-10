@@ -2609,7 +2609,6 @@
 #include "code\white\fogmann\funmote.dm"
 #include "code\white\Gargule\ability.dm"
 #include "code\white\Gargule\randomprocs.dm"
-#include "code\white\Gargule\randomshit.dm"
 #include "code\white\Gargule\surgery\organs.dm"
 #include "code\white\Gargule\virology\symptoms\old.dm"
 #include "code\white\hule\cookbook.dm"
