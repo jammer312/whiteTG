@@ -39,10 +39,13 @@
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	var/cuffsound = 'sound/weapons/handcuffs.ogg'
 	var/trashtype = null //for disposable cuffs
+	var/tricked = FALSE //fake cuffs
 
 /obj/item/restraints/handcuffs/attack(mob/living/carbon/C, mob/living/user)
 	if(!istype(C))
 		return
+
+	tricked = FALSE
 
 	if(iscarbon(user) && (user.has_trait(TRAIT_CLUMSY) && prob(50)))
 		to_chat(user, "<span class='warning'>Uh... how do those things work?!</span>")
@@ -74,6 +77,14 @@
 				to_chat(user, "<span class='warning'>You fail to handcuff [C]!</span>")
 		else
 			to_chat(user, "<span class='warning'>[C] doesn't have two hands...</span>")
+
+/obj/item/restraints/handcuffs/attack_self(mob/living/carbon/human/user)
+	if(!istype(user))
+		return
+	if(!user.handcuffed)
+		tricked = TRUE
+		apply_cuffs(user,user)
+		to_chat(user,"<span class='notice'>You handcuff yourself in a tricky way, so you can free yourself almost instantly. Be careful, close examination can spot the trick.</span>")
 
 /obj/item/restraints/handcuffs/proc/apply_cuffs(mob/living/carbon/target, mob/user, var/dispense = 0)
 	if(target.handcuffed)

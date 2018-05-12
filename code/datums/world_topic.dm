@@ -137,6 +137,14 @@
 /datum/world_topic/status
     keyword = "status"
 
+/datum/world_topic/namecheck/Run(list/input)
+	//Oh this is a hack, someone refactor the functionality out of the chat command PLS
+	var/datum/tgs_chat_command/namecheck/NC = new
+	var/datum/tgs_chat_user/user = new
+	user.friendly_name = input["sender"]
+	user.mention = user.friendly_name
+	return NC.Run(user, input["namecheck"])
+
 /datum/world_topic/adminwho
 	keyword = "adminwho"
 	require_comms_key = TRUE
