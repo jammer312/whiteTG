@@ -43,20 +43,11 @@
 	name = "Alien"
 	icon = 'code/white/Gargule/icons.dmi'
 	icon_state = "cat"
-	locked = FALSE
+//	hasinner = 1
 	color_src = 0
 
 /datum/sprite_accessory/tails_animated/lizard/alien
 	name = "Alien"
 	icon = 'code/white/Gargule/icons.dmi'
 	icon_state = "cat"
-	locked = FALSE
 	color_src = 0
-
-//implants
-/obj/item/organ/cyberimp/arm/surgery/alien
-	icon = 'code/white/Gargule/icons.dmi'
-	icon_state = "surgery"
-	name = "alien surgical toolset implant"
-	desc = "A set of alien surgical tools hidden behind a concealed panel on the user's arm."
-	contents = newlist(/obj/item/retractor/alien, /obj/item/hemostat/alien, /obj/item/cautery/alien, /obj/item/surgicaldrill/alien, /obj/item/scalpel/alien, /obj/item/circular_saw/alien, /obj/item/surgical_drapes)
