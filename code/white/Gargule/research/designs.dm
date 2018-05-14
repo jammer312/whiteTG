@@ -13,6 +13,14 @@
 	name = "Folding Bone Saw"
 	id = "circular_saw_folding"
 	build_type = AUTOLATHE
-	materials = list(MAT_METAL = 10000)
+	materials = list(MAT_METAL = 4000)
 	build_path = /obj/item/circular_saw/folding
+	category = list("initial", "Medical")
+
+/datum/design/optable_folding
+	name = "Folding Table"
+	id = "optable_folding"
+	build_type = AUTOLATHE
+	materials = list(MAT_METAL = 3000)
+	build_path = /obj/item/optable
 	category = list("initial", "Medical")
