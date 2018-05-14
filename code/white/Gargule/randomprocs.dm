@@ -37,3 +37,13 @@ mob/living/carbon/human/species/lizard/Initialize()
 	if(src.dna.features["tail_lizard"] == "Alien")
 		src.dna.features["tail_lizard"] = "Smooth"
 		update_body()
+
+/obj/item/slapper/Initialize()
+	var/mob/living/carbon/human/H = loc
+	if(istype(H))
+		var/obj/item/slapper_mark_two/S = new /obj/item/slapper_mark_two(get_turf(H))
+		H.dropItemToGround(src, TRUE)
+		H.put_in_hands(S)
+		qdel(src)
+		del(src)
+	..()
