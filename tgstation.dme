@@ -2613,6 +2613,7 @@
 #include "code\white\Gargule\research\designs.dm"
 #include "code\white\Gargule\research\nodes.dm"
 #include "code\white\Gargule\surgery\organs.dm"
+#include "code\white\Gargule\surgery\table.dm"
 #include "code\white\Gargule\virology\symptoms\old.dm"
 #include "code\white\hule\cookbook.dm"
 #include "code\white\hule\wordlist.dm"

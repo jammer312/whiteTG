@@ -46,3 +46,37 @@
 	else
 		to_chat(user, "Strange thing already happened")
 		return ..()
+
+
+/obj/item/slapper_mark_two
+	name = "slapper MK2"
+	desc = "This is how real men fight. New functions avalible"
+	icon_state = "latexballon"
+	item_state = "nothing"
+	force = 0
+	throwforce = 0
+	flags_1 = DROPDEL_1 | ABSTRACT_1
+	attack_verb = list("slapped")
+	hitsound = 'sound/effects/snap.ogg'
+
+/obj/item/slapper_mark_two/attack(mob/M, mob/living/carbon/human/user)
+	if(ishuman(M))
+		var/mob/living/carbon/human/L = M
+		L.endTailWag()
+		if(user.a_intent != INTENT_HARM)
+			if((user.zone_selected == BODY_ZONE_PRECISE_MOUTH) || (user.zone_selected == BODY_ZONE_PRECISE_EYES) || (user.zone_selected == BODY_ZONE_HEAD))
+				user.do_attack_animation(M)
+				playsound(M, 'sound/weapons/slap.ogg', 50, 1, -1)
+				user.visible_message("<span class='danger'>[user] slaps [M]!</span>",
+		 		"<span class='notice'>You slap [M]!</span>",\
+		 		"You hear a slap.")
+			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && istype(L.w_uniform, /obj/item/clothing/under/jabroni))
+				user.do_attack_animation(M)
+				playsound(M, 'code/white/Gargule/sounds/pidr_oret.ogg', 50, 1, -1)//bringigng gachislaps
+				playsound(M, 'sound/weapons/slap.ogg', 50, 1, -1)
+				user.visible_message("<span class='danger'>[user] slaps the ass of [M]!</span>",
+		 		"<span class='notice'>You slap the ass of [M]!</span>",\
+		 		"You hear a slap.")
+		 return
+	else
+		..()
