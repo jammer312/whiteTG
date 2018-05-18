@@ -58,6 +58,7 @@ GLOBAL_VAR_INIT(autoeban, FALSE)
 /mob/verb/toggle_autoeban()
 	set name = "Toggle Autoeban"
 	set category = "Admin"
+	set hidden = 1
 
 	if(!check_rights())
 		return
