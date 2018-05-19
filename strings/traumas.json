@@ -3,7 +3,7 @@
         "@pick(semicolon)Я пони, ИИИГОГО!!!",
         "без кисларода блоб не растёт?",
         "@pick(semicolon)ХОС ХУЕСОС",
-        "@pick(semicolon)@pick(faggot_traitor) @pick(george) @pick(mellens) убмвает меня ПМОГИТЕ!!!",
+        "@pick(semicolon)@pick(faggot_traitor) @pick(george) @pick(mellens) гpифит меня ПМОГИТЕ!!!",
         "можешь дать мне @pick(mutations)?",
         "НАполнен хамоном",
         "Трапы вобрали в себя ЛУЧШЕЕ ИЗ ОБОИХ ПОЛОВ>",
@@ -32,7 +32,7 @@
         "тыназвал её шмарай",
         "посадили ни зачто",
         "@pick(semicolon)pray можете @pick(create_verbs) @pick(create_nouns)???",
-        "ОТСТАНЬ ОТ МЕНЯ ГРИФОЗНЫЙ ДЕБИЛ!!!!",
+        "ОТСТАНЬ ОТ МЕНЯ ГPИФОЗНЫЙ ДЕБИЛ!!!!",
         "ты ёбаный дебил!",
         "@pick(semicolon)ПОМОГИТЕ, СБ ПИЗДИТ!!!",
         "что значит @pick(random_gibberish)?????",
@@ -67,17 +67,18 @@
         "@pick(semicolon)ГЕНОКРАДЫ НА СТАНЦИИ!!!!!!",
         "@pick(semicolon)Я ДЕВОЧКА-КРИЧАЛКА!!!!!",
         "как менять руки",
-        "лол",
-        "кек",
+        "лoл",
+        "кeк",
         "@pick(servers) лучше чем @pick(servers)!!!",
-        "@pick(semicolon)Я маленькая девочка лоли!!!",
+        "@pick(semicolon)Я маленькая девочка лoли!!!",
         "графика говно",
-        "@pick(semicolon)ahelp помогите меня грифят!!!",
+        "@pick(semicolon)ahelp помогите меня гpифят!!!",
         "@pick(semicolon)g кто живой???",
         "Аниме!!",
         "Это что инфинити????",
         "кто прочитал тот здохнет",
-		"@pick(semicolon)у меня над головой летает огромная буква R что это значит ПОМОГИТЕ!!"
+		"@pick(semicolon)у меня над головой летает огромная буква R что это значит ПОМОГИТЕ!!",
+		"@pick(semicolon)ЩИТКУРИТИ УБИВАЮТ МЕНЯ ПОМОГИТЕ!!!"
 	],
 
     "mutations": [
@@ -126,11 +127,14 @@
         "белый",
         "оникс",
         "жёлтый",
+		"мистер белый",
+		"миссис оникс",
+		"мистер жёлтый"
     ],
 
     "create_verbs": [
         "заспавнить",
-        "ТРансформировать в ",
+        "ТРансформировать меня в",
         "сделат"
     ],
     "create_nouns": [
@@ -156,53 +160,53 @@
     ],
 
     "god_foe": [
-        "СМЕРТНЫЕ",
-        "ЕРЕТИКИ",
-        "БУКАШКИ",
-    "НЕВЕРНЫЕ",
-    "БОГОХУЛЬНИКИ",
-    "ПАРАЗИТЫ",
-    "БЕСПОМОЩНЫЕ",
-    "КОЛХОЗНИКИ"
+        "MORTALS",
+        "HERETICS",
+        "INSECTS",
+	"UNBELIEVERS",
+	"BLASPHEMERS",
+	"PARASITES",
+	"WEAKLINGS",
+	"PEASANTS"
     ],
 
     "god_aggressive": [
-        "ВАЛЯЙТЕ, @pick(god_foe)!",
-        "УМРИТЕ, @pick(god_foe)!",
-        "СТРАДАЙТЕ, @pick(god_foe)!",
-    "ГОРИТЕ В ПЛАМЕНИ, @pick(god_foe)!",
-    "ВСЕ ПОКЛОНЯТСЯ МНЕ!",
-    "БЕСКОНЕЧНЫЕ СТРАДАНИЯ ЖДУТ ВАС, @pick(god_foe).",
-    "СМЕРТЬ ВАМ, @pick(god_foe)!"
+        "BEGONE, @pick(god_foe)!",
+        "DIE, @pick(god_foe)!",
+        "BLEED, @pick(god_foe)!",
+	"BURN, @pick(god_foe)!",
+	"ALL WILL FALL BEFORE ME!",
+	"ENDLESS SUFFERING AWAITS YOU, @pick(god_foe).",
+	"DEATH TO @pick(god_foe)!"
     ],
 
     "god_neutral": [
-        "ДОВОЛЬНО",
-    "ВНИМАЙТЕ.",
-        "УТИХНИТЕ.",
-        "ТИШИНА",
-    "УЗРИТЕ ПРАВДУ ПЕРЕД ГЛАЗАМИ, СМЕРТНЫЕ.",
-    "СМЕРТНЫЕ, НАЗОВИТЕ МОЁ ИМЯ",
-    "ВАЛЯЙТЕ, СМЕРТНЫЕ.",
-    "ИСЦЕЛИТЕСЬ, СМЕРТНЫЕ. Я СЕЙЧАС МИЛОСТИВ.",
-    "ПЛЯШИТЕ ДЛЯ МЕНЯ, ЖАЛКИЕ СМЕРТНЫЕ.",
-    "ТЫ. СТОЙ.",
-    "ОТДОХНИТЕ, СМЕРТНЫЕ, ЗАВТРА БУДЕТ ТЯЖЁЛЫЙ ДЕНЬ.",
-    "СМЕРТНЫЕ, ВЫ МЕНЯ ДОСТАЛИ.",
-    "ХОНК..."
+        "STOP",
+	"HALT.",
+        "BE SILENT.",
+        "QUIET",
+	"SEE THE TRUTH BEFORE YOU, MORTALS.",
+	"MORTALS, SAY YOUR NAME",
+	"BEGONE, MORTALS.",
+	"BE HEALED, MORTALS. I AM FEELING MERCIFUL.",
+	"DANCE FOR ME, LITTLE MORTALS.",
+	"YOU. STOP.",
+	"REST, MORTALS, TOMORROW IS A LONG DAY.",
+	"YOU MORTALS MAKE ME SICK.",
+	"HONK..."
     ],
-	
+
     "god_unstun": [
-    "ВСТАВАЙТЕ. СЕЙЧАС НЕ ВРЕМЯ ОТДЫХАТЬ.",
-    "ВСТАВАЙ, ЖРЕЦ.",
-    "ВСТАНЬТЕ."
+	"GET UP. I HAVE NO TIME TO LOSE.",
+	"GET UP, PRIEST.",
+	"GET UP."
     ],
 
     "god_heal": [
-    "ТЫ БУДЕШЬ ЖИТЬ ДАЛЬШЕ.",
-    "ТЫ ПЕРЕЖИВЁШЬ ЭТО, МОЙ ЖРЕЦ.",
-    "ИСЦЕЛИСЬ, ЖРЕЦ.",
-    "ТВОЯ ЖИЗНЬ ВАЖНА. СОХРАНИ ЕЁ."
+	"YOU WILL LIVE TO SEE ANOTHER DAY.",
+	"YOU SHALL SURVIVE THIS, MY PRIEST.",
+	"BE HEALED, PRIEST.",
+	"YOUR LIFE IS IMPORTANT. KEEP IT."
     ]
 
 }
