@@ -6,7 +6,7 @@ GLOBAL_LIST_INIT(exc_full, world.file2list("[global.config.directory]/autoeban/e
 
 GLOBAL_LIST_INIT(neobuchaemie_debili, world.file2list("[global.config.directory]/autoeban/debix_list.fackuobema"))
 
-GLOBAL_VAR_INIT(autoeban, FALSE)
+GLOBAL_VAR_INIT(autoeban, TRUE)
 
 /mob/verb/add_word(T as text)
 	set name = "Add forbidden word"
