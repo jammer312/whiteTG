@@ -2608,6 +2608,7 @@
 #include "code\white\webhook.dm"
 #include "code\white\fogmann\fogmann.dm"
 #include "code\white\fogmann\funmote.dm"
+#include "code\white\Gargule\_helpers.dm"
 #include "code\white\Gargule\ability.dm"
 #include "code\white\Gargule\items.dm"
 #include "code\white\Gargule\randomprocs.dm"
