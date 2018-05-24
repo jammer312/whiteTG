@@ -835,13 +835,17 @@ What a mess.*/
 
 /obj/machinery/computer/secure_data/proc/eject_id(mob/user)
 	if(scan)
-		user.put_in_hands(scan)
-		scan = null
+		scan.forceMove(drop_location())
+		if(!issilicon(user) && Adjacent(user))
+			user.put_in_hands(scan)
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
+		scan = null
 	else //switching the ID with the one you're holding
-		var/obj/item/I = user.is_holding_item_of_type(/obj/item/card/id)
-		if(I)
-			if(!user.transferItemToLoc(I, src))
+		if(issilicon(user) || !Adjacent(user))
+			return
+		var/obj/item/I = user.get_active_held_item()
+		if(istype(I, /obj/item/card/id))
+			if(!user.transferItemToLoc(I,src))
 				return
-			scan = I
 			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
+			scan = I
