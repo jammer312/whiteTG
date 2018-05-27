@@ -830,7 +830,7 @@ What a mess.*/
 	return 0
 
 /obj/machinery/computer/secure_data/AltClick(mob/user)
-	if(user.canUseTopic(src) && scan)
+	if(user.canUseTopic(src))
 		eject_id(user)
 
 /obj/machinery/computer/secure_data/proc/eject_id(mob/user)
@@ -843,9 +843,8 @@ What a mess.*/
 	else //switching the ID with the one you're holding
 		if(issilicon(user) || !Adjacent(user))
 			return
-		var/obj/item/I = user.get_active_held_item()
-		if(istype(I, /obj/item/card/id))
-			if(!user.transferItemToLoc(I,src))
-				return
-			playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)
-			scan = I
+		var/obj/item/card/id/held_id = user.is_holding_item_of_type(/obj/item/card/id)
+		if(QDELETED(held_id) || !user.transferItemToLoc(held_id, src))
+			return
+		scan = held_id
+		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, 0)

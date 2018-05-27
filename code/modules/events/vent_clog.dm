@@ -13,8 +13,8 @@
 	var/list/vents  = list()
 	var/randomProbability = 1
 	var/reagentsAmount = 100
-	var/list/saferChems = list("water","carbon","flour","cleaner","nutriment","condensedcapsaicin","mushroomhallucinogen","lube","pink_glitter",
-						 "plantbgone","blood","charcoal","space_drugs","morphine","holywater","ethanol","hot_coco","sacid","mindbreaker","rotatium",
+	var/list/saferChems = list("water","carbon","flour","cleaner","nutriment","condensedcapsaicin","mushroomhallucinogen","lube","pink_glitter","cryptobiolin",
+						 "plantbgone","blood","charcoal","space_drugs","morphine","holywater","ethanol","hot_coco","sacid","mindbreaker","rotatium","bluespace",
 						 "pax","laughter","concentrated_barbers_aid","colorful_reagent","dizzysolution","tiresolution","sodiumchloride","beer","hair_dye","sugar","white_glitter","growthserum")
 	//needs to be chemid unit checked at some point
 
@@ -72,3 +72,26 @@
 /datum/round_event/vent_clog/catastrophic
 	randomProbability = 30
 	reagentsAmount = 250
+
+/datum/round_event_control/vent_clog/beer
+	name = "Foamy beer stationwide"
+	typepath = /datum/round_event/vent_clog/beer
+	max_occurrences = 0
+
+/datum/round_event/vent_clog/beer
+	reagentsAmount = 100
+
+/datum/round_event/vent_clog/beer/announce()
+	priority_announce("The scrubbers network is experiencing an unexpected surge of pressurized beer. Some ejection of contents may occur.", "Atmospherics alert")
+
+/datum/round_event/vent_clog/beer/start()
+	for(var/obj/machinery/atmospherics/components/unary/vent in vents)
+		if(vent && vent.loc)
+			var/datum/reagents/R = new/datum/reagents(1000)
+			R.my_atom = vent
+			R.add_reagent("beer", reagentsAmount)
+
+			var/datum/effect_system/foam_spread/foam = new
+			foam.set_up(200, get_turf(vent), R)
+			foam.start()
+		CHECK_TICK
