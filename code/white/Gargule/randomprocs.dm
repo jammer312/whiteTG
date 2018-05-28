@@ -48,14 +48,18 @@ mob/living/carbon/human/species/lizard/Initialize()
 		del(src)
 	..()
 
+/mob/living/carbon/human/can_see_reagents()
+	.=..()
+	if(src.internal_organs_slot[ORGAN_SLOT_HUD])
+		var/obj/item/organ/cyberimp/eyes/hud/science/H = src.internal_organs_slot[ORGAN_SLOT_HUD]
+		if(H.scan_reagents)
+			return 1
 
 /obj/item/organ/heart/attackby(obj/item/F, mob/user)
 	.=..()
 	if(istype(F, /obj/item/reagent_containers/food/snacks/grown) && isstrictlytype(src, /obj/item/organ/heart))
 		var/obj/item/reagent_containers/food/snacks/grown/FT = F
 		var/pow = 0
-		/datum/plant_gene/trait/glow
-		/datum/plant_gene/trait/glow/berry
 		var/obj/item/seeds/berry/S = FT.seed
 		if(S.get_gene(/datum/plant_gene/trait/glow))
 			pow = S.potency*2/100//if trait any of biolums
