@@ -24,3 +24,25 @@
 	materials = list(MAT_METAL = 3000)
 	build_path = /obj/item/optable
 	category = list("initial", "Medical")
+
+/datum/design/cyberimp_science_hud
+	name = "Science HUD Implant"
+	desc = "Cybernetic eye implants with an analyzer for scanning items and reagents."
+	id = "ci-scihud"
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 50
+	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 500, MAT_GOLD = 500)
+	build_path = /obj/item/organ/cyberimp/eyes/hud/science
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/cyberimp_diagnostic_hud
+	name = "Diagnostic HUD Implant"
+	desc = "A heads-up display capable of analyzing the integrity and status of robotics and exosuits."
+	id = "ci-diaghud"
+	build_type = PROTOLATHE | MECHFAB
+	construction_time = 50
+	materials = list(MAT_METAL = 600, MAT_GLASS = 600, MAT_SILVER = 500, MAT_GOLD = 500)
+	build_path = /obj/item/organ/cyberimp/eyes/hud/diagnostic
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
