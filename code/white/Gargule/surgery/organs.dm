@@ -129,16 +129,16 @@
 			var/datum/action/A = X
 			A.UpdateButtonIcon()
 		if(on)
-			owner.visible_message("Your skin emmits light!")
+			owner.show_message("Your skin emmits light!")
 		else
-			owner.visible_message("You wanna stay in darkness")
+			owner.show_message("You wanna stay in darkness")
 		return 1
 
 /obj/item/organ/heart/light/attack(mob/M, mob/living/carbon/user, obj/target)
 	if(M != user)
 		return ..()
-	user.visible_message("You raise your mouth and devour it!")
+	user.show_message("You raise your mouth and devour it!")
 	playsound(user, 'sound/magic/demon_consume.ogg', 50, 1)
-	user.visible_message("It tastes sweet and grows inside of you")
+	user.show_message("It tastes sweet and grows inside of you")
 	user.temporarilyRemoveItemFromInventory(src, TRUE)
 	Insert(user)

@@ -72,7 +72,7 @@
 		 		"You hear a slap.")
 			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && istype(L.w_uniform, /obj/item/clothing/under/jabroni))
 				user.do_attack_animation(M)
-				playsound(M, 'code/white/Gargule/sounds/pidr_oret.ogg', 50, 1, -1)//bringigng gachislaps
+				playsound(M, 'code/white/Gargule/sounds/pidr_oret.ogg', 75, 1, -1)//bringigng gachislaps
 				playsound(M, 'sound/weapons/slap.ogg', 50, 1, -1)
 				user.visible_message("<span class='danger'>[user] slaps the ass of [M]!</span>",
 		 		"<span class='notice'>You slap the ass of [M]!</span>",\

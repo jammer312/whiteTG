@@ -72,3 +72,13 @@ mob/living/carbon/human/species/lizard/Initialize()
 				N.brightness_on = 4+pow
 				qdel(F)
 				qdel(src)
+
+/obj/item/clothing/mask/gas/sechailer/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if(slot == 2)
+		playsound(user,'code/white/Gargule/sounds/shitMask.ogg',75,1)
+
+/obj/item/nullrod/claymore/attack_self(mob/user)
+	..()
+	if(isstrictlytype(src,/obj/item/nullrod/claymore))
+		playsound(user,'code/white/Gargule/sounds/inTheNameOfGod.ogg',75,1)
