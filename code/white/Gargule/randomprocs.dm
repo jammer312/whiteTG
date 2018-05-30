@@ -82,3 +82,10 @@ mob/living/carbon/human/species/lizard/Initialize()
 	..()
 	if(isstrictlytype(src,/obj/item/nullrod/claymore))
 		playsound(user,'code/white/Gargule/sounds/inTheNameOfGod.ogg',75,1)
+
+/obj/allowed(mob/M)
+	.=..()
+	if(isalienadult(M))
+		var/mob/living/carbon/alien/humanoid/H = M
+		if(check_access(H.get_active_held_item()) || check_access(H.wear_id))
+			return 1
