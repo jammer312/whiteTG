@@ -278,7 +278,8 @@ SUBSYSTEM_DEF(shuttle)
 		webhook_send_roundstatus("shuttle called", list("reason" = call_reason, "seclevel" = get_security_level()))
 	else
 		webhook_send_roundstatus("shuttle called", list("reason" = "none", "seclevel" = get_security_level()))
-	message_admins("[key_name_admin(user)] has called the shuttle. (<A HREF='?_src_=holder;[HrefToken()];trigger_centcom_recall=1'>TRIGGER CENTCOM RECALL</A>)")
+	message_admins("[ADMIN_LOOKUPFLW(user)] has called the shuttle. (<A HREF='?_src_=holder;[HrefToken()];trigger_centcom_recall=1'>TRIGGER CENTCOM RECALL</A>)")
+
 
 /datum/controller/subsystem/shuttle/proc/centcom_recall(old_timer, admiral_message)
 	if(emergency.mode != SHUTTLE_CALL || emergency.timer != old_timer)
@@ -314,7 +315,8 @@ SUBSYSTEM_DEF(shuttle)
 		message_admins("[key_name_admin(user)] has recalled the shuttle.")
 		webhook_send_roundstatus("shuttle recalled")
 		var/area/A = get_area(user)
-		deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> has recalled the shuttle at <span class='name'>[A.name]</span>.</span>", user)
+		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the shuttle.")
+		deadchat_broadcast("<span class='deadsay'><span class='name'>[user.real_name]</span> has recalled the shuttle from <span class='name'>[get_area_name(user, TRUE)]</span>.</span>", user)
 		return 1
 
 /datum/controller/subsystem/shuttle/proc/canRecall()
