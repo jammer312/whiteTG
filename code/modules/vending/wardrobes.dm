@@ -17,7 +17,8 @@
 					/obj/item/clothing/head/soft/sec = 3,
 					/obj/item/clothing/mask/bandana/red = 3,
 					/obj/item/clothing/under/rank/security/skirt = 3,
-					/obj/item/clothing/under/rank/security/grey = 3)
+					/obj/item/clothing/under/rank/security/grey = 3,
+					/obj/item/clothing/under/pants/khaki = 3)
 	premium = list(/obj/item/clothing/under/rank/security/navyblue = 3,
 					/obj/item/clothing/suit/security/officer = 3,
 					/obj/item/clothing/head/beret/sec/navyofficer = 3)
@@ -381,3 +382,4 @@
 /obj/item/vending_refill/wardrobe/viro_wardrobe
 	machine_name = "ViroDrobe"
 	charges = list(4, 0, 0)
+	init_charges = list(4, 0, 0)
