@@ -25,7 +25,7 @@
 	max_heat_protection_temperature = HELMET_MAX_TEMP_PROTECT
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
-	flags_inv = HIDEHAIR
+	flags_inv = HIDEHAIR|HIDEFACE
 
 /obj/item/clothing/suit/armor/soulbreaker
 	name = "Soulbreaker armor"
@@ -67,4 +67,20 @@ obj/item/clothing/shoes/combat/soulbreaker
 	desc = "High speed, no drag combat boots."
 	permeability_coefficient = 0.01
 	clothing_flags = NOSLIP
+	armor = list("melee" = 95, "bullet" = 75, "laser" = 70, "energy" = 70, "bomb" = 80, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 80)
+
+/obj/item/clothing/gloves/soulbreaker
+	name = "Soulbreaker gloves"
+	desc = "Very sturdy gloves. Offers good protection for your hands."
+	icon = 'code/white/Tsuru/suits.dmi'
+	alternate_worn_icon = 'code/white/Tsuru/suit.dmi'
+	icon_state = "soulbreaker_hands"
+	item_state = "soulbreaker_hands"
+	item_color = null	//So they don't wash.
+	transfer_prints = TRUE
+	body_parts_covered = ARMS
+	cold_protection = ARMS
+	min_cold_protection_temperature = GLOVES_MIN_TEMP_PROTECT
+	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
+	resistance_flags = NONE
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 70, "energy" = 70, "bomb" = 80, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 80)
