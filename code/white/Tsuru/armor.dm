@@ -48,7 +48,7 @@
 	item_state = "hardhat0_soulbreaker"
 	item_color = "soulbreaker" //Determines used sprites: hardhat[on]_[item_color] and hardhat[on]_[item_color]2 (lying down sprite)
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 70,"energy" = 70, "bomb" = 80, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 80)
-	actions_types = list(/datum/action/item_action/toggle_helmet_light)
+	actions_types = list(/datum/action/item_action/halt)
 	flags_inv = HIDEEARS
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
@@ -57,6 +57,27 @@
 	resistance_flags = NONE
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEFACE
+
+/obj/item/clothing/head/hardhat/soulbreaker/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/halt))
+		halt()
+	else
+		return
+
+/obj/item/clothing/head/hardhat/soulbreaker/verb/halt()
+	set category = "Object"
+	set name = "Allahu Akbar!"
+	set src in usr
+	if(!isliving(usr))
+		return
+	if(!can_use(usr))
+		return
+
+	if(cooldown < world.time - 30)
+		usr.audible_message("[usr]: <font color='red' size='4'><b>Allahu Akbar!</b></font>")
+		playsound(src.loc, "code/white/Tsuru/allahu.ogg", 100, 0, 4)
+		cooldown = world.time
+
 
 obj/item/clothing/shoes/combat/soulbreaker
 	alternate_worn_icon = 'code/white/Tsuru/suit.dmi'
