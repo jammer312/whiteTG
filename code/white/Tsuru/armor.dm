@@ -105,3 +105,36 @@ obj/item/clothing/shoes/combat/soulbreaker
 	max_heat_protection_temperature = GLOVES_MAX_TEMP_PROTECT
 	resistance_flags = NONE
 	armor = list("melee" = 95, "bullet" = 75, "laser" = 70, "energy" = 70, "bomb" = 80, "bio" = 80, "rad" = 80, "fire" = 80, "acid" = 80)
+
+/obj/item/clothing/head/cerberus
+	alternate_worn_icon = 'code/white/Tsuru/suit.dmi'
+	icon = 'code/white/Tsuru/suits.dmi'
+	name = "Cerberus helmet"
+	desc = "Bark!"
+	icon_state = "cerberus"
+	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
+	strip_delay = 80
+	dynamic_hair_suffix = ""
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEHAIR|HIDEFACE
+	actions_types = list(/datum/action/item_action/halt)
+
+/obj/item/clothing/head/cerberus/ui_action_click(mob/user, action)
+	if(istype(action, /datum/action/item_action/halt))
+		halt()
+	else
+		return
+
+/obj/item/clothing/head/cerberus/verb/halt()
+	set category = "Object"
+	set name = "Bark!"
+	set src in usr
+	if(!isliving(usr))
+		return
+	if(!can_use(usr))
+		return
+
+	if(cooldown < world.time - 30)
+		usr.audible_message("[usr]'s helmet: <font color='red' size='4'><b>Bark!</b></font>")
+		playsound(src.loc, "code/white/Tsuru/bark.ogg", 100, 0, 4)
+		cooldown = world.time
