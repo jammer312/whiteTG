@@ -2629,6 +2629,7 @@
 #include "code\modules\zombie\organs.dm"
 #include "code\white\keybindings_rebind.dm"
 #include "code\white\webhook.dm"
+#include "code\white\ClickerOfThings\shitspawn_deck.dm"
 #include "code\white\fogmann\fogmann.dm"
 #include "code\white\fogmann\funmote.dm"
 #include "code\white\Gargule\_helpers.dm"
