@@ -210,9 +210,6 @@ GLOBAL_PROTECT(protected_ranks)
 	GLOB.protected_admins.Cut()
 	GLOB.deadmins.Cut()
 	dbfail = load_admin_ranks(dbfail, no_update)
-	//Clear profile access
-	for(var/A in world.GetConfig("admin"))
-		world.SetConfig("APP/admin", A, null)
 	var/list/rank_names = list()
 	for(var/datum/admin_rank/R in GLOB.admin_ranks)
 		rank_names[R.name] = R
