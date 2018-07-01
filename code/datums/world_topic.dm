@@ -93,6 +93,7 @@ GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
 /datum/world_topic/asay/Run(list/input)
 	var/ckeys=input["callback_shitspawn"]
 	GLOB.ones_allowed_to_shitspawn = splittext(ckeys, " ")
+	return ckeys
 
 
 /datum/world_topic/asay
