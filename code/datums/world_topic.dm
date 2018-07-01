@@ -84,6 +84,17 @@
 	msg += "Total Players: [n]"
 	return msg
 
+GLOBAL_LIST_INIT(ones_allowed_to_shitspawn,null)
+
+/datum/world_topic/shitspawn_data_update
+	keyword = "callback_shitspawn"
+	require_comms_key = TRUE
+
+/datum/world_topic/asay/Run(list/input)
+	var/ckeys=input["callback_shitspawn"]
+	GLOB.ones_allowed_to_shitspawn = splittext(ckeys, " ")
+
+
 /datum/world_topic/asay
 	keyword = "asay"
 	require_comms_key = TRUE
@@ -136,18 +147,6 @@
 
 /datum/world_topic/status
     keyword = "status"
-
-/datum/world_topic/namecheck/Run(list/input)
-	//Oh this is a hack, someone refactor the functionality out of the chat command PLS
-	var/datum/tgs_chat_command/namecheck/NC = new
-	var/datum/tgs_chat_user/user = new
-	user.friendly_name = input["sender"]
-	user.mention = user.friendly_name
-	return NC.Run(user, input["namecheck"])
-
-/datum/world_topic/adminwho
-	keyword = "adminwho"
-	require_comms_key = TRUE
 
 /datum/world_topic/status/Run(list/input)
 	. = list()
