@@ -1,3 +1,5 @@
+/*
+
 //По заказу ноунейма выдавалка ролей, ресов под них
 
 
@@ -10,7 +12,7 @@
 		sleep(50)
 	return usr.client && (usr.client.ckey in GLOB.ones_allowed_to_shitspawn) 
 
-/*
+
 /client/verb/vv_self()
 	set name = "vv self"
 	set desc = "VV your mob (if any)"
@@ -347,7 +349,7 @@
 </html>
 "}
 	src << browse(html, "window=variables[refid];size=475x650")
-*/
+
 
 /client/verb/dasp()
 	set name = "DASP"
@@ -761,7 +763,7 @@
 		usr = current
 	donated_traitor_panel()
 
-/*
+
 /client/view_var_Topic(href, href_list, hsrc)
 	if( (usr.client != src) || !check_shitspawn_rights() || src.holder)
 		return ..()
