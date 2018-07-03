@@ -489,7 +489,7 @@
 	panel.open()
 	return
 
-/*
+
 /datum/mind/Topic(href, href_list)
 	if(!check_shitspawn_rights())
 		return ..() //usual topic
@@ -761,7 +761,7 @@
 		usr = current
 	donated_traitor_panel()
 
-
+/*
 /client/view_var_Topic(href, href_list, hsrc)
 	if( (usr.client != src) || !check_shitspawn_rights() || src.holder)
 		return ..()
